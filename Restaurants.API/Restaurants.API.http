@@ -1,0 +1,109 @@
+@Restaurants.API_HostAddress = http://localhost:5298
+@token = CfDJ8HfyQ34-SF9HjPnWh8DLYad98W6rPXRkSdUeS5Eans2jVpWYiODojpddQzkrJW3mmoYEoPEMZ7s_GTfn-XJooJS6s0InijGaYC4uhsX8PL1g5-tyXpe__LbB9brctbIDqcMdK_rscb-wTLVT-wLSwSfCBkTgpTUMq6r4CMRTRtVL7gqdDxbnlzTeWvY6NPlHgxmu8MSrmFmRPMDHpQFqRQyXDBhv4TZPjTOZP0yd5zZ6Sd_r87yjd6ZbyyewqS6JVMPij-qMf14KwZYJlMNzsd4k2hQ1MRmWIwX7OmV6Y16wXJ1HaSDvi58TXYMk90R5jm-ZHZb1fcvOqdjZSeQHpLUUPy7FNruqWLbMkO9RjRI8AAMzUcbQOJW8sMndldAWP54v_-3hbAW1XPyF1UvelEjsk-NbUtFSCyUfgaeR2sEVzasAB2o0-wBPIlYlhMrMMqA0hrTQnbnnfznItNkKmHIWezfN_dYeZf6e_03R911xsUCHgrD3jNaVjcgQNoHXaxaCWfWEQUwYQFjgkGKnav_hKcX_n4NAn2nauluqgicrct3WtjBMq0Vb4VaxHmQNfsnOBbgqrbUVR2DCX2SiqqbUllanM7D85pM7K1kM9_E3YBwRrTQrnDHQ7Ndgd-2h2_7AZi0tqFFZPxO5a3L-yIgzF375eEpOlgS1BGlZDCdlmQbZvd9SA2bOCALkKRQ6FhzYZZyNDGCJBOGt3abFI1w
+GET {{Restaurants.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants?SearchPhrase=&pageSize=5 &pageNumber=1
+Authorization : Bearer {{token}}
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants/{id}
+###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants
+Content-Type: application/json
+Authorization : Bearer CfDJ8HfyQ34-SF9HjPnWh8DLYafif0P3sVY8X27-R4xEcz-jlxDEZneUlL0KR2Ogo9_hAJuub0y-eQw02MhnWBI31p7xdxdL6tK4E9l_4mHt_Y46Th1xRHwV_pUsfVGY1GLQokFEFoQdX8k9Xae3_DYFhZl7ScwyjP53Cu8SpRT5wlgqIzvFiq8TAYFhaWHeUZyusPDnmbrj9avllhK2Vs2L3vrf1wp24cLGVnMs814CCuBZJCwtpkqlq0EezrMNR5_i-2qqvOLuC_CM7aVjyiRZlvDInIGXc3pRWRVx7dnrK3WkDEH-69kyJTaPxK7PuAKynCHP7mgOeOkHoP_hS_oDN2xfa3GRUYsRJzlUrcPIKgOgcI2DlG0mCwStYPPaxi6hXCKEcVBVdrF-f-gWyxkp6ex7IQEVTxEWAMxsH8BmjK0YCq8MlOAinclmEVyRVOubZpUOJNQVfz0HV0sJcaSOM7B4IfQeS2WEK5KnnYiYV6vJxJJh23Q2mAcg7Gk9xtBGKRqMEQsb1u568OXE71aphxSQeLip8CswFJbqNp1lPB8XyB7abgXCSIFbrUzQYMZ3etyvDo1296geI2_Dy3CQRwKTNON7zuRH18UzHEuuWjBDq8TWgZ4vXHSWBTD7SJtL1XSZpXKvWEKbmyKY-wG8IhrP9i1Pr0K41twogoGoo_6sehg4_a122MkhehpEeNZBTw
+  "Description": "A culinary experience like no other",
+  "Category": "Indian",
+  "HasDelivery": true,
+  "ContactEmail": "info@gourmetdelights.com",
+  "ContactNumber": "555-123-4567",
+  "City": "Metropolis",
+  "Street": "456 Gourmet Avenue",
+  "PostalCode": "54321"
+}
+
+
+###
+GET {{Restaurants.API_HostAddress}}/api/restaurants/6
+
+###
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/3
+
+
+###
+PATCH {{Restaurants.API_HostAddress}}/api/restaurants/2
+Content-Type: application/json
+
+{
+  "Name": "Grizoo mazen",
+  "Description": "A culinary experience like no other",
+  "HasDelivery": false
+}
+
+
+###
+POST {{Restaurants.API_HostAddress}}/api/restaurants/{retaurantId}/dishes
+Content-Type: application/json
+
+{
+  //CreateDishCommand
+}
+
+
+###
+POST {{Restaurants.API_HostAddress}}/api/restaurants/4/dish
+Content-Type: application/json
+
+{
+  "name": "spaggiti",
+  "description": "ymmm",
+  "price": 20,
+  "kiloCalories": 15
+}
+
+
+###
+GET {{Restaurants.API_HostAddress}}/api/restaurants/1/dish
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants/{retaurantId}/dish
+Content-Type: application/json
+
+{
+  //CreateDishCommand
+}
+
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants/2/dish/1
+
+
+###
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/2/dish
+
+###
+GET http://localhost:5298/api/restaurants/4/dish
+
+
+###
+Post  http://localhost:5298/api/identity/login
+Content-Type: application/json
+  
+{
+  "email": "user@gmail.com",
+  "password": "Password0!"
+}
+
+###
+
+Post  http://localhost:5298/api/identity/register
+Content-Type: application/json
+  
+{
+  "email": "owners@gmail.com",
+  "password": "Password0!"
+}
